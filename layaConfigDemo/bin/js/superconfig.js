@@ -27,7 +27,7 @@ var SuperConfig;
                 return v;
             }
             console.error("no value in sheet " +
-                name + 
+                name +
                 " with key = " +
                 key +
                 " 请检查是否Config.NewXXX来构造算法对象");
@@ -65,6 +65,10 @@ var SuperConfig;
             return a % b;
         }
         excelFact(a) {
+            if (FormulaSheet.factmax == 0) {
+                FormulaSheet.factmax = 1;
+                FormulaSheet.factcache.set(1, 1);
+            }
             var n = Math.floor(a);
             if (n < 0)
                 return 0;
@@ -110,8 +114,7 @@ var SuperConfig;
         }
     }
     FormulaSheet.factcache = new Map();
-    FormulaSheet.factcache.set(1,1);
-    FormulaSheet.factmax = 1;
+    FormulaSheet.factmax = 0;
     SuperConfig.FormulaSheet = FormulaSheet;
 })(SuperConfig || (SuperConfig = {}));
 var SuperConfig;
@@ -216,8 +219,7 @@ var SuperConfig;
             return GetLevelTable()._Datas.get(id.toString()).Maxexp;
         }
         data_level_vlookup_3(id) {
-            let getdt = GetLevelTable()._Datas.get(id.toString());
-            return getdt.Maxhp;
+            return GetLevelTable()._Datas.get(id.toString()).Maxhp;
         }
         data_level_vlookup_5(id) {
             return GetLevelTable()._Datas.get(id.toString()).Double;
@@ -469,16 +471,11 @@ var SuperConfig;
         Init() {
             this.datas.set(1003, 20);
             this.funcs.set(1006, (ins) => {
-                let table = SuperConfig.GetLevelTable();
-                let one = ins.get(1 * 1000 + 3);
-                let two = ins.get(2 * 1000 + 8);
-                return (table.data_level_vlookup_3(one) + two);
+                return (SuperConfig.GetLevelTable().data_level_vlookup_3(ins.get(1 * 1000 + 3)) + ins.get(2 * 1000 + 8));
             });
             this.datas.set(2003, 5);
             this.funcs.set(2008, (ins) => {
-                let getPr = ins.get(2 * 1000 + 3);
-                let gtVal = ins.excelFact(getPr);
-                return gtVal;
+                return ins.excelFact(ins.get(2 * 1000 + 3));
             });
             this.relation.set(1003, [1006]);
             this.relation.set(2008, [1006]);

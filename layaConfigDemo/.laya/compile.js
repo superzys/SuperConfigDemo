@@ -17,46 +17,46 @@ if (global.publish) {
 	prevTasks = ["loadConfig"];
 }
 
-//===== zys
+//===== zys  configJson的开始
 //自己全局安装的插件
-// let gutil = require(ideModuleDir +  "gulp-util");
-// // let babel = require("C:\\Users\\zys\\AppData\\Roaming\\npm\\node_modules\\"+ "gulp-babel");
-// let ts = require("C:\\Users\\zys\\AppData\\Roaming\\npm\\node_modules\\"+ "gulp-typescript");
-// let uglify = require( ideModuleDir + "gulp-uglify");
+let gutil = require(ideModuleDir +  "gulp-util");
+// let babel = require("C:\\Users\\zys\\AppData\\Roaming\\npm\\node_modules\\"+ "gulp-babel");
+let ts = require("C:\\Users\\zys\\AppData\\Roaming\\npm\\node_modules\\"+ "gulp-typescript");
+let uglify = require( ideModuleDir + "gulp-uglify");
 
-// // gutil.log(gutil.colors.red('[log]'), "ideModuleDir is " + ideModuleDir);
+// gutil.log(gutil.colors.red('[log]'), "ideModuleDir is " + ideModuleDir);
 
-// // gutil.log(gutil.colors.red('[log]'), "start yk " + workSpaceDir);
-// console.log("start configJosn complie");
-// gulp.task("configJosn", prevTasks, function () {
-// 	// gutil.log(gutil.colors.red('[log]'), "start configJosn compile");
-// 	return gulp.src([
-// 		// workSpaceDir + "/libs/*.d.ts",
-// 		// workSpaceDir + "/protobuf/**/*.d.ts",
-// 		//如果需要加入 配置库 文件
-// 		workSpaceDir + "/src/Config/**/*.ts"])
-// 		.pipe(ts({
-// 			noImplicitAny: false,
-// 			outFile: "superconfig.js",
-// 			target: "es6",
-// 			lib: ["es6", "dom"],
-// 			removeComments: true,
-// 		}))
-// 		// .pipe(babel({
-// 		// 	presets: ['es2015']
-// 		// }))
-// 		// .pipe(uglify())
-// 		.on('error', function (err) {
-// 			console.log(err.toString());
-// 			// gutil.log(gutil.colors.red('[Error]'), err.toString());
-// 		})
-// 		.pipe(gulp.dest(workSpaceDir + "/bin/js"))
-// });
+// gutil.log(gutil.colors.red('[log]'), "start yk " + workSpaceDir);
+console.log("start configJosn complie");
+gulp.task("configJosn", prevTasks, function () {
+	// gutil.log(gutil.colors.red('[log]'), "start configJosn compile");
+	return gulp.src([
+		// workSpaceDir + "/libs/*.d.ts",
+		// workSpaceDir + "/protobuf/**/*.d.ts",
+		//如果需要加入 配置库 文件
+		workSpaceDir + "/src/Config/**/*.ts"])
+		.pipe(ts({
+			noImplicitAny: false,
+			outFile: "superconfig.js",
+			target: "es6",
+			lib: ["es6", "dom"],
+			removeComments: true,
+		}))
+		// .pipe(babel({
+		// 	presets: ['es2015']
+		// }))
+		// .pipe(uglify())
+		.on('error', function (err) {
+			console.log(err.toString());
+			// gutil.log(gutil.colors.red('[Error]'), err.toString());
+		})
+		.pipe(gulp.dest(workSpaceDir + "/bin/js"))
+});
 
-// let jsontask = ["configJosn"];
-//====
+let jsontask = ["configJosn"];
+//====  configJson的 结束
 //使用browserify，转换ts到js，并输出到bin/js目录
-gulp.task("compile", prevTasks, function () {
+gulp.task("compile", jsontask, function () {
 	// 发布时调用编译功能，判断是否点击了编译选项
 	if (global.publish && !global.config.compile) {
 		return;
