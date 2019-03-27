@@ -72,8 +72,10 @@ namespace SuperConfig {
       return a % b;
     }
 
-    private static factcache: Map<number, number> = new Map<number, number>();
+    private static factcache: Map<number, number> =  new Map<number, number>();
     private static factmax: number = 1;
+    // FormulaSheet.factcache.set(1,1);
+    
     public excelFact(a: number): number {
       // var n = a.toFixed(0)
       var n = Math.floor(a);

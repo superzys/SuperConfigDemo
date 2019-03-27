@@ -49,6 +49,8 @@ class Main {
 
 
 		let heroClu =SuperConfig.NewHeroFormulaSheet();
+		heroClu.SetRatio(2);
+		heroClu.SetLevel(3);
 		let eHP1 = heroClu.GetMaxhp();
 		let rat1 = heroClu.GetRatio();
 		console.log( eHP1 +"  "+ rat1);
