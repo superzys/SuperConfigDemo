@@ -1,0 +1,163 @@
+{
+    "Name": "map",
+    "_Datas": {
+        "1": {
+            "Id": 1,
+            "Type": 1,
+            "Share": 0,
+            "Res": "002_yw_forest",
+            "Name": "月见森林",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "2": {
+            "Id": 2,
+            "Type": 1,
+            "Share": 1,
+            "Res": "001_yw_green",
+            "Name": "常磐草原",
+            "Randomlvmin": 20,
+            "Randomlvmax": 30
+        },
+        "3": {
+            "Id": 3,
+            "Type": 1,
+            "Share": 0,
+            "Res": "001_zc_friendlycity",
+            "Name": "友好市",
+            "Randomlvmin": 1,
+            "Randomlvmax": 50
+        },
+        "4": {
+            "Id": 4,
+            "Type": 1,
+            "Share": 0,
+            "Res": "007_yw_desert",
+            "Name": "炙日沙漠",
+            "Randomlvmin": 20,
+            "Randomlvmax": 50
+        },
+        "5": {
+            "Id": 5,
+            "Type": 1,
+            "Share": 1,
+            "Res": "003_yw_lake",
+            "Name": "月轮湖畔",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "6": {
+            "Id": 6,
+            "Type": 1,
+            "Share": 0,
+            "Res": "005_yw_mountaintop",
+            "Name": "天冠山顶",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "7": {
+            "Id": 7,
+            "Type": 1,
+            "Share": 0,
+            "Res": "004_yw_piedmont",
+            "Name": "天冠山麓",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "8": {
+            "Id": 8,
+            "Type": 1,
+            "Share": 0,
+            "Res": "002_zc_pallettown",
+            "Name": "真新镇",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "9": {
+            "Id": 9,
+            "Type": 1,
+            "Share": 1,
+            "Res": "PVPArena",
+            "Name": "决斗场",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "10": {
+            "Id": 10,
+            "Type": 2,
+            "Share": 1,
+            "Res": "001_yw_lake",
+            "Name": "月轮湖畔测试",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "12": {
+            "Id": 12,
+            "Type": 1,
+            "Share": 0,
+            "Res": "008_yw_cemetery",
+            "Name": "紫苑墓园",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "13": {
+            "Id": 13,
+            "Type": 2,
+            "Share": 1,
+            "Res": "PVPArena",
+            "Name": "比赛场",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "14": {
+            "Id": 14,
+            "Type": 2,
+            "Share": 1,
+            "Res": "001_yw_green",
+            "Name": "常磐草原",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "15": {
+            "Id": 15,
+            "Type": 1,
+            "Share": 0,
+            "Res": "009_yw_ruins",
+            "Name": "遗迹",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        },
+        "16": {
+            "Id": 16,
+            "Type": 1,
+            "Share": 0,
+            "Res": "010_yw_coast",
+            "Name": "海滩",
+            "Randomlvmin": 0,
+            "Randomlvmax": 0
+        }
+    },
+    "_Group": {
+        "Type": {
+            "1": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                12,
+                15,
+                16
+            ],
+            "2": [
+                10,
+                13,
+                14
+            ]
+        }
+    }
+}
