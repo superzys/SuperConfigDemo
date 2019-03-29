@@ -39,12 +39,14 @@ class Main {
     private onProLoaded(): void {
 		SuperConfig.LoadJsonFunc = (f: string) => {
 			console.log("加载:" + f);
-
-			return Laya.loader.getRes("res/config_data/" + f);
+var getObj = Laya.loader.getRes("res/config_data/" + f);
+			return getObj;
 		}
+		
 		let cfg = SuperConfig.GetLevelTable();
 		let get1  = cfg.Get_maxexp(10);
 		let get2  = cfg.Get(1);
+
 		console.log( get1 +"  "+ get2);
 
 
